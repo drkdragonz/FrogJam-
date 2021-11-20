@@ -11,7 +11,6 @@ var _velocity = Vector2()
 var _floor = Vector2(0, -1)
 
 
-
 enum {
 	IDLE
 	RUN
@@ -21,10 +20,11 @@ enum {
 
 func flip_sprite() -> void:
 	if _velocity.x < 0:
-		$Sprite.flip_h = true
+		$AnimatedSprite.flip_h = true
 	if move_direction().x > 0:
-		$Sprite.flip_h = false
+		$AnimatedSprite.flip_h = false
 		
+
 var _state: int = IDLE
 
 func _ready():
@@ -32,6 +32,7 @@ func _ready():
 	print(can_jump)
 
 func _physics_process(delta):
+	print(_state)
 	flip_sprite()
 	var my_move_direction = move_direction()
 	_velocity.y += _gravity
@@ -41,34 +42,32 @@ func _physics_process(delta):
 	
 	match _state:
 		IDLE:
-			
+			$AnimatedSprite.play("Idle")
 			_velocity.x = 0
 			if my_move_direction:
 				change_state(RUN)
 			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
-				print("jumpin")
 				_velocity.y = -jump_force
 				can_jump -= 1
 				change_state(AIR)
 		RUN:
-			$AnimationPlayer.play("Walk")
+			$AnimatedSprite.play("Walk")
 			if not my_move_direction:
 				change_state(IDLE)
 			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
-				print("jumpin")
 				_velocity.y = -jump_force
 				can_jump -= 1
 				change_state(AIR)
 			else:
 				_velocity.x = my_move_direction.x * _speed
 		AIR:
-			$AnimationPlayer.play("Jump")
+			$AnimatedSprite.play("Jump")
 			if my_move_direction:
 				_velocity.x = my_move_direction.x * _speed
 			else: 
 				_velocity.x = 0
 			
-			if _velocity.y < 1:
+			if _velocity.y > 1 and is_on_floor():
 				change_state(IDLE)
 			
 	_velocity = move_and_slide(_velocity, _floor)
