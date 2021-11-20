@@ -13,7 +13,7 @@ var _floor = Vector2(0, -1)
 
 enum {
 	IDLE
-	RUN
+	WALK
 	AIR
 }
 
@@ -26,6 +26,7 @@ func flip_sprite() -> void:
 		
 
 var _state: int = IDLE
+
 
 func _ready():
 	can_jump = can_jump_start
@@ -42,16 +43,14 @@ func _physics_process(delta):
 	
 	match _state:
 		IDLE:
-			$AnimatedSprite.play("Idle")
 			_velocity.x = 0
 			if my_move_direction:
-				change_state(RUN)
+				change_state(WALK)
 			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
 				_velocity.y = -jump_force
 				can_jump -= 1
-				change_state(AIR)
-		RUN:
-			$AnimatedSprite.play("Walk")
+				change_state(WALK)
+		WALK:
 			if not my_move_direction:
 				change_state(IDLE)
 			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
@@ -61,13 +60,12 @@ func _physics_process(delta):
 			else:
 				_velocity.x = my_move_direction.x * _speed
 		AIR:
-			$AnimatedSprite.play("Jump")
 			if my_move_direction:
 				_velocity.x = my_move_direction.x * _speed
 			else: 
 				_velocity.x = 0
 			
-			if _velocity.y > 1 and is_on_floor():
+			if _velocity.y > 20:
 				change_state(IDLE)
 			
 	_velocity = move_and_slide(_velocity, _floor)
