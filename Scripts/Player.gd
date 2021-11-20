@@ -4,6 +4,8 @@ export (int) var speed = 100
 export (int) var jump_speed = -200
 export (int) var gravity = 300
 
+onready var _animation_player = $AnimationPlayer
+
 var velocity = Vector2.ZERO
 
 export (float, 0, 1.0) var friction = 0.1
@@ -23,6 +25,7 @@ func get_input():
 	var dir = 0
 	if Input.is_action_pressed("ui_right"):
 		dir += 1
+		_animation_player.play("Walk")
 	if Input.is_action_pressed("ui_left"):
 		dir -= 1
 	if dir != 0:
@@ -37,4 +40,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
+			_animation_player.play("Jump")
 			velocity.y = jump_speed
+			if velocity.y == 0:
+				_animation_player.play("Idle")
