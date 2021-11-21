@@ -17,6 +17,13 @@ enum {
 	AIR
 }
 
+func AnimationHandler():
+	if _state == WALK:
+		$AnimatedSprite.play("Walk")
+	if _state == IDLE:
+		$AnimatedSprite.play("Idle")
+	if _state == AIR:
+		$AnimatedSprite.play("Jump")
 
 func flip_sprite() -> void:
 	if _velocity.x < 0:
@@ -33,7 +40,7 @@ func _ready():
 	print(can_jump)
 
 func _physics_process(delta):
-	print(_state)
+	AnimationHandler()
 	flip_sprite()
 	var my_move_direction = move_direction()
 	_velocity.y += _gravity
@@ -65,7 +72,7 @@ func _physics_process(delta):
 			else: 
 				_velocity.x = 0
 			
-			if _velocity.y > 20:
+			if _velocity.y > 0:
 				change_state(IDLE)
 			
 	_velocity = move_and_slide(_velocity, _floor)
