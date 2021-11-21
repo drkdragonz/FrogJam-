@@ -110,7 +110,7 @@ script = ExtResource( 2 )
 jump_force = 300.0
 _speed = 200.0
 _gravity = 20.0
-can_jump_start = 3
+can_jump_start = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, 4 )

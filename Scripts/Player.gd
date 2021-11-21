@@ -26,20 +26,14 @@ func flip_sprite() -> void:
 	if move_direction().x > 0:
 		$AnimatedSprite.flip_h = false
 
-func AnimHandler():
-	if _state == WALK:
-		$AnimatedSprite.play("Walk")
-	if _state == AIR:
-		$AnimatedSprite.play("Jump")
-	if is_on_floor():
-		$AnimatedSprite.play("Idle")
 
 func _ready():
 	can_jump = can_jump_start
 	print(can_jump)
 
 func _physics_process(delta):
-	AnimHandler()
+	if is_on_floor() and _state == IDLE:
+		$AnimatedSprite.play("Idle")
 	flip_sprite()
 	var my_move_direction = move_direction()
 	_velocity.y += _gravity
@@ -58,6 +52,7 @@ func _physics_process(delta):
 				can_jump -= 1
 				change_state(AIR)
 		WALK:
+			$AnimatedSprite.play("Walk")
 			if not my_move_direction:
 				change_state(IDLE)
 			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
@@ -68,6 +63,7 @@ func _physics_process(delta):
 			else:
 				_velocity.x = my_move_direction.x * _speed
 		AIR:
+			$AnimatedSprite.play("Jump")
 			if my_move_direction:
 				_velocity.x = my_move_direction.x * _speed
 			else: 
@@ -86,4 +82,3 @@ func move_direction() -> Vector2:
 
 func change_state(target_state: int):
 	_state = target_state
-
