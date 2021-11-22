@@ -8,7 +8,6 @@ extents = Vector2( 13.5, 11 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Push"
-length = 2.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Arms:position")
@@ -17,7 +16,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 12, -1 ), Vector2( -11, -1 ), Vector2( 12, -1 ) ]
@@ -29,7 +28,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 3, -1 ), Vector2( -20, -1 ), Vector2( 3, -1 ) ]
@@ -41,7 +40,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 9.5, -1 ), Vector2( -13.5, -1 ), Vector2( 9.5, -1 ) ]
