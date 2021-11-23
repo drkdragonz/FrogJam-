@@ -339,7 +339,7 @@ tile_data = PoolIntArray( 0, 0, 131074, 1, 0, 131074, 2, 0, 131074, 3, 0, 131074
 tile_set = SubResource( 30 )
 cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( -2818015, 0, 1, -2031613, 0, 65536, -851966, 0, 196608, -262107, 0, 65539, -196571, 0, 65536, -131035, 0, 65538 )
+tile_data = PoolIntArray( -2818015, 0, 1, -2031613, 0, 65536, -851966, 0, 196608 )
 
 [node name="Start" type="Button" parent="."]
 margin_left = 124.0
