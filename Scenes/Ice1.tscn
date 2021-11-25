@@ -406,8 +406,6 @@ shape = SubResource( 28 )
 [node name="IcePlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 37, 107 )
 script = ExtResource( 8 )
-jump_force = 320.0
-can_jump_start = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 7 )
