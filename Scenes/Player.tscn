@@ -5,6 +5,42 @@
 [ext_resource path="res://Graphics/Bigger Light.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Small Light.png" type="Texture" id=4]
 
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 111, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 222, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 444, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 555, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 666, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 777, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 888, 0, 111, 102 )
+
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 111, 102 )
@@ -45,44 +81,13 @@ region = Rect2( 333, 0, 111, 102 )
 atlas = ExtResource( 1 )
 region = Rect2( 333, 0, 111, 102 )
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 111, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 222, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 444, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 555, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 666, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 1 )
-region = Rect2( 777, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 1 )
-region = Rect2( 888, 0, 111, 102 )
-
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 16.0
+}, {
 "frames": [ SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "Idle",
@@ -92,16 +97,10 @@ animations = [ {
 "loop": true,
 "name": "Jump",
 "speed": 1.0
-}, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 16.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=22]
-radius = 6.0
-height = 5.0
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 8.5, 6 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -114,11 +113,10 @@ can_jump_start = 5
 position = Vector2( 2.40741e-35, -9.53674e-07 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 11 )
-animation = "Jump"
-frame = 3
+animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1 )
+position = Vector2( 0.5, 3.5 )
 shape = SubResource( 22 )
 
 [node name="Big" type="Light2D" parent="."]
