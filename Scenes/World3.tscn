@@ -7,7 +7,8 @@
 [ext_resource path="res://Graphics/Cave/Rock tilemap.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Pusher.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/nokiafc22.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=8]
+
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"

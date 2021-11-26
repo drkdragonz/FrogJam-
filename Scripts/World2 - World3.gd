@@ -1,11 +1,6 @@
 extends Area2D
 
 
-
-
-
-
-
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Fade Out":
 		get_tree().change_scene("res://Scenes/World3.tscn")

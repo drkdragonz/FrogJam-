@@ -5,7 +5,7 @@ export (int) var jump_speed = -1800
 export (int) var gravity = 4000
 
 export var Jumps = 2
-var can_Jump = 0
+export var can_Jump = 0
 
 var velocity = Vector2.ZERO
 
@@ -22,6 +22,7 @@ func get_input():
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
+
 func _ready():
 	can_Jump == Jumps
 

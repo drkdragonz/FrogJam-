@@ -7,7 +7,8 @@
 [ext_resource path="res://Graphics/Cave/Environment.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/World1 - World 2.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/nokiafc22.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=8]
+
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"
