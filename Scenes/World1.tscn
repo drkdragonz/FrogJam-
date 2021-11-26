@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Graphics/Cave/Rock tilemap.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Scripts/TempCamSwitcher.gd" type="Script" id=4]
 [ext_resource path="res://Graphics/Cave/Environment.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/World2 - World3.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/World1 - World 2.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/nokiafc22.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"
@@ -384,6 +385,9 @@ extents = Vector2( 160, 1.25 )
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 160, 1.5 )
 
+[sub_resource type="DynamicFont" id=60]
+font_data = ExtResource( 8 )
+
 [sub_resource type="Animation" id=56]
 resource_name = "Fade Out"
 tracks/0/type = "value"
@@ -412,6 +416,46 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0.635294, 0.635294, 0.635294, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "Start"
+length = 1.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 0.517634 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Enviroment/CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.635294, 0.635294, 0.635294, 1 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=58]
@@ -485,9 +529,24 @@ can_jump_start = 2
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 7 )
 
+[node name="Label" type="Label" parent="Area2D"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 140.0
+margin_top = 47.0
+margin_right = 180.0
+margin_bottom = 67.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 60 )
+text = "1 - 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+autoplay = "Start"
 "anims/Fade Out" = SubResource( 56 )
 anims/RESET = SubResource( 57 )
+anims/Start = SubResource( 59 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 347, -340 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Scripts/TempCamSwitcher.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Graphics/Cave/Rock tilemap.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Pusher.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/nokiafc22.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"
@@ -311,6 +312,7 @@ extents = Vector2( 160, 1.5 )
 
 [sub_resource type="Animation" id=31]
 resource_name = "Fade In"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Enviroment/CanvasModulate:color")
 tracks/0/interp = 1
@@ -322,6 +324,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0.635294, 0.635294, 0.635294, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -338,6 +352,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0.635294, 0.635294, 0.635294, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=33]
+font_data = ExtResource( 8 )
 
 [node name="world" type="Node2D"]
 script = ExtResource( 2 )
@@ -411,6 +440,17 @@ rotation = 3.14159
 autoplay = "Fade In"
 "anims/Fade In" = SubResource( 31 )
 anims/RESET = SubResource( 32 )
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+margin_left = 133.0
+margin_top = 47.0
+margin_right = 179.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 33 )
+text = "3 - 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="Enviroment/Area2D" to="Enviroment/Area2d" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Enviroment/Area2D2" to="Enviroment/Area2d" method="_on_Area2D2_body_entered"]

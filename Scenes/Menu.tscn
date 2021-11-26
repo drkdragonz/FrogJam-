@@ -1,10 +1,10 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=48 format=2]
 
-[ext_resource path="res://UI/FredokaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Graphics/Cave/Rock tilemap.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Cave/Rock background.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
 [ext_resource path="res://Graphics/Cave/Environment.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/nokiafc22.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"
@@ -304,16 +304,41 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 [sub_resource type="Theme" id=31]
 
 [sub_resource type="DynamicFont" id=32]
-font_data = ExtResource( 1 )
+size = 13
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0.537255, 0.509804, 0.980392, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=37]
+
+[sub_resource type="StyleBoxEmpty" id=41]
 
 [sub_resource type="DynamicFont" id=34]
-font_data = ExtResource( 1 )
+size = 13
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxEmpty" id=40]
+
+[sub_resource type="StyleBoxEmpty" id=39]
+
+[sub_resource type="StyleBoxEmpty" id=42]
 
 [sub_resource type="DynamicFont" id=35]
-font_data = ExtResource( 1 )
+size = 13
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxEmpty" id=43]
+
+[sub_resource type="StyleBoxEmpty" id=44]
+
+[sub_resource type="StyleBoxEmpty" id=45]
 
 [sub_resource type="DynamicFont" id=33]
-font_data = ExtResource( 1 )
+size = 26
+outline_size = 1
+outline_color = Color( 0.207843, 0.207843, 0.207843, 1 )
+font_data = ExtResource( 6 )
 
 [node name="Menu" type="Control"]
 script = ExtResource( 4 )
@@ -342,44 +367,57 @@ format = 1
 tile_data = PoolIntArray( -2818015, 0, 1, -2031613, 0, 65536, -851966, 0, 196608 )
 
 [node name="Start" type="Button" parent="."]
-margin_left = 124.0
-margin_top = 64.0
-margin_right = 196.0
-margin_bottom = 90.0
+margin_left = 134.0
+margin_top = 71.0
+margin_right = 186.0
+margin_bottom = 97.0
 theme = SubResource( 31 )
 custom_fonts/font = SubResource( 32 )
-text = "  Start  "
+custom_styles/hover = SubResource( 36 )
+custom_styles/pressed = SubResource( 37 )
+custom_styles/focus = SubResource( 41 )
+text = "Start"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Quit" type="Button" parent="."]
-margin_left = 124.0
-margin_top = 120.0
-margin_right = 196.0
-margin_bottom = 146.0
+margin_left = 130.0
+margin_top = 126.0
+margin_right = 191.0
+margin_bottom = 152.0
 custom_fonts/font = SubResource( 34 )
-text = "  Quit  "
+custom_styles/hover = SubResource( 40 )
+custom_styles/pressed = SubResource( 39 )
+custom_styles/focus = SubResource( 42 )
+text = " Quit  "
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Credits" type="Button" parent="."]
-margin_left = 124.0
-margin_top = 92.0
+margin_left = 125.0
+margin_top = 97.0
 margin_right = 196.0
-margin_bottom = 118.0
+margin_bottom = 123.0
 custom_fonts/font = SubResource( 35 )
+custom_styles/hover = SubResource( 43 )
+custom_styles/pressed = SubResource( 44 )
+custom_styles/focus = SubResource( 45 )
 text = "Credits"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 120.0
-margin_top = 32.0
-margin_right = 204.0
-margin_bottom = 52.0
+margin_left = 75.0
+margin_top = 25.0
+margin_right = 245.0
+margin_bottom = 58.0
+custom_colors/font_color = Color( 0.933333, 0.85098, 1, 1 )
 custom_fonts/font = SubResource( 33 )
 text = "Frog Game"
 __meta__ = {
