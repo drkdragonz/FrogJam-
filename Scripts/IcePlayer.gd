@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export (int) var speed = 1200
-export (int) var jump_speed = -1800
-export (int) var gravity = 4000
+export (int) var speed = 250
+export (int) var jump_speed = -380
+export (int) var gravity = 1600
 
 var jumps = 0
 const max_jumps = 2
