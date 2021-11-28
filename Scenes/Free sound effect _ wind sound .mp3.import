@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Free sound effect _ wind sound .mp3-dd192a87067f02aafdd9d4f3745184a5.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Free sound effect _ wind sound .mp3"
+dest_files=[ "res://.import/Free sound effect _ wind sound .mp3-dd192a87067f02aafdd9d4f3745184a5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
