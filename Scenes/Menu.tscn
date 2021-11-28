@@ -343,7 +343,8 @@ font_data = ExtResource( 6 )
 [node name="Menu" type="Control"]
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [  ]
 }
 
 [node name="Enviroment" type="Node2D" parent="."]

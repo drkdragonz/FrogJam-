@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/TempCamSwitcher.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Pusher.tscn" type="PackedScene" id=7]
 [ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=8]
-
+[ext_resource path="res://Scenes/World3 To ice1.gd" type="Script" id=9]
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"
@@ -311,6 +311,9 @@ extents = Vector2( 160, 1.25 )
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 160, 1.5 )
 
+[sub_resource type="DynamicFont" id=33]
+font_data = ExtResource( 8 )
+
 [sub_resource type="Animation" id=31]
 resource_name = "Fade In"
 length = 2.0
@@ -337,6 +340,21 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "Fade Out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Enviroment/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.635294, 0.635294, 0.635294, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -366,8 +384,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=33]
-font_data = ExtResource( 8 )
+[sub_resource type="RectangleShape2D" id=35]
 
 [node name="world" type="Node2D"]
 script = ExtResource( 2 )
@@ -437,12 +454,7 @@ can_jump_start = 2
 position = Vector2( 31, -284 )
 rotation = 3.14159
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Fade In"
-"anims/Fade In" = SubResource( 31 )
-anims/RESET = SubResource( 32 )
-
-[node name="Label" type="Label" parent="AnimationPlayer"]
+[node name="Label" type="Label" parent="."]
 margin_left = 133.0
 margin_top = 47.0
 margin_right = 179.0
@@ -453,6 +465,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 31, -284 )
+rotation = 3.14159
+script = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+root_node = NodePath("../..")
+autoplay = "Fade In"
+"anims/Fade In" = SubResource( 31 )
+"anims/Fade Out" = SubResource( 34 )
+anims/RESET = SubResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -325, 55.9992 )
+shape = SubResource( 35 )
+
 [connection signal="body_entered" from="Enviroment/Area2D" to="Enviroment/Area2d" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Enviroment/Area2D2" to="Enviroment/Area2d" method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="Enviroment/Area2d" to="Enviroment/Area2d" method="_on_Area2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="animation_finished" from="Area2D/AnimationPlayer" to="Area2D" method="_on_AnimationPlayer_animation_finished"]
