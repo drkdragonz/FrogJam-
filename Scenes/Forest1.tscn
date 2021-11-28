@@ -402,9 +402,9 @@ __meta__ = {
 color = Color( 0, 0, 0, 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Enviroment"]
-margin_left = -9.0
+margin_left = -6.0
 margin_top = -367.0
-margin_right = 328.0
+margin_right = 331.0
 margin_bottom = 182.0
 color = Color( 0.0784314, 0.0941176, 0.180392, 1 )
 __meta__ = {
@@ -412,7 +412,7 @@ __meta__ = {
 }
 
 [node name="Pusher" parent="Enviroment" instance=ExtResource( 3 )]
-position = Vector2( 50, -69 )
+position = Vector2( 49, -69 )
 rotation = -3.14159
 
 [node name="Pusher2" parent="Enviroment" instance=ExtResource( 3 )]
@@ -432,7 +432,6 @@ format = 1
 tile_data = PoolIntArray( -983029, 0, 2, -851959, 0, 65537, -851955, 0, 196608, -786429, 0, 65536, -720890, 0, 196609, -589814, 0, 131072, -589813, 0, 131074, -524281, 0, 3, -393207, 0, 196610, -327651, 0, 1, -327649, 0, 3, -327646, 0, 2, -327644, 0, 3, -262140, 0, 131075, -196581, 0, 65539, -131042, 0, 65538, -65503, 0, 131073, -65500, 0, 131074, 262172, 0, 3, 262174, 0, 2, 262176, 0, 65536, 393250, 0, 196610, 458776, 0, 0, 458778, 0, 3, 524309, 0, 65537, 589845, 0, 65539, 589858, 0, 196609, 720922, 0, 131073, 720926, 0, 131075, 720929, 0, 131072, 917508, 0, 0, 917510, 0, 2, 917513, 0, 3, 917515, 0, 2, 917518, 0, 2, 917520, 0, 3, 917522, 0, 0, 917524, 0, 2, 917526, 0, 3, 917528, 0, 2, 917530, 0, 0, 917534, 0, 2, 917536, 0, 2, 917537, 0, 3, 917540, 0, 2 )
 
 [node name="Area2D" type="Area2D" parent="Enviroment"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Area2D"]
 position = Vector2( 160, -7 )
@@ -443,15 +442,13 @@ position = Vector2( 160, -171 )
 shape = SubResource( 29 )
 
 [node name="Area2D2" type="Area2D" parent="Enviroment"]
-visible = false
 position = Vector2( 0, -184 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Area2D2"]
-position = Vector2( 160, 0 )
+position = Vector2( 160, 3 )
 shape = SubResource( 29 )
 
 [node name="Area2d" type="Area2D" parent="Enviroment"]
-visible = false
 script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="Enviroment/Area2d"]
@@ -464,7 +461,7 @@ position = Vector2( 160, -90 )
 position = Vector2( 160, -270 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Area2d"]
-position = Vector2( 160, 9 )
+position = Vector2( 160, 6 )
 shape = SubResource( 28 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -508,19 +505,16 @@ anims/Break = SubResource( 89 )
 anims/RESET = SubResource( 90 )
 
 [node name="Eoo" type="Sprite" parent="FallingPlatform"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallingPlatform"]
 position = Vector2( -1.81885, 2.6748 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 88 )
 
 [node name="Area2D" type="Area2D" parent="FallingPlatform"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallingPlatform/Area2D"]
 position = Vector2( -1.81885, -105.116 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 91 )
 
 [connection signal="body_entered" from="Enviroment/Area2D" to="Enviroment/Area2d" method="_on_Area2D_body_entered"]
