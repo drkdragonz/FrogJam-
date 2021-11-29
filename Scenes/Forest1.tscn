@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/TempCamSwitcher.gd" type="Script" id=4]
 [ext_resource path="res://Graphics/Environmen.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/World1 - World 2.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Forest1 - Forest2.gd" type="Script" id=7]
 [ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Scenes/Eoo.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/FallingPlatform.gd" type="Script" id=10]
@@ -294,6 +294,18 @@ font_data = ExtResource( 8 )
 
 [sub_resource type="Animation" id=56]
 resource_name = "Fade Out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Enviroment/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.94902, 0.94902, 0.94902, 1 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [sub_resource type="Animation" id=57]
 length = 0.001
@@ -351,7 +363,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=58]
-extents = Vector2( 3.5, 9 )
+extents = Vector2( 8.75, 14.5 )
 
 [sub_resource type="Animation" id=89]
 resource_name = "Break"
@@ -438,14 +450,14 @@ position = Vector2( 160, -7 )
 shape = SubResource( 29 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enviroment/Area2D"]
-position = Vector2( 160, -171 )
+position = Vector2( 160, -178 )
 shape = SubResource( 29 )
 
 [node name="Area2D2" type="Area2D" parent="Enviroment"]
 position = Vector2( 0, -184 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Area2D2"]
-position = Vector2( 160, 3 )
+position = Vector2( 160, -5 )
 shape = SubResource( 29 )
 
 [node name="Area2d" type="Area2D" parent="Enviroment"]
@@ -491,7 +503,7 @@ anims/RESET = SubResource( 57 )
 anims/Start = SubResource( 59 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 346, -333 )
+position = Vector2( 340.75, -327.5 )
 shape = SubResource( 58 )
 
 [node name="FallingPlatform" type="StaticBody2D" parent="."]
@@ -514,7 +526,7 @@ shape = SubResource( 88 )
 [node name="Area2D" type="Area2D" parent="FallingPlatform"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallingPlatform/Area2D"]
-position = Vector2( -1.81885, -105.116 )
+position = Vector2( -1.81885, -149.697 )
 shape = SubResource( 91 )
 
 [connection signal="body_entered" from="Enviroment/Area2D" to="Enviroment/Area2d" method="_on_Area2D_body_entered"]

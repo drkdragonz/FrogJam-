@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Scenes/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Cave/Rock tilemap.png" type="Texture" id=2]
 [ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=6]
 

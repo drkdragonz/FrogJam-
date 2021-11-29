@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Graphics/Cave/Rock tilemap.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/World2 - World3.gd" type="Script" id=7]
 [ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Scenes/Free sound effect _ wind sound .mp3" type="AudioStream" id=9]
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"
@@ -551,6 +552,11 @@ text = "2 - 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="body_entered" from="Enviroment/Area2D" to="Enviroment/Area2d" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Enviroment/Area2D2" to="Enviroment/Area2d" method="_on_Area2D2_body_entered"]
