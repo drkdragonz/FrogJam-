@@ -4,7 +4,7 @@
 [ext_resource path="res://Graphics/Ice background.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Ice tilemap.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/TempCamSwitcher.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/World1 - World 2.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Ice3 - Forest1.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=6]
 [ext_resource path="res://Pusher.tscn" type="PackedScene" id=7]
 [ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=8]
