@@ -469,7 +469,7 @@ shape = SubResource( 28 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 118, 91 )
+position = Vector2( 354, -340 )
 shape = SubResource( 58 )
 
 [node name="Label" type="Label" parent="Area2D"]
