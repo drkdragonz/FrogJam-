@@ -38,7 +38,6 @@ func _physics_process(delta):
 			velocity.y = jump_speed
 			jumps += 1
 	elif is_on_floor():
-		$AudioStreamPlayer.play()
 		jumps = 0
 
 	if not is_on_floor():
