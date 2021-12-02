@@ -36,9 +36,11 @@ func _physics_process(delta):
 	if jumps < max_jumps and Input.is_action_just_pressed("ui_up"):
 			$AnimatedSprite.play("Jump")
 			velocity.y = jump_speed
+			$AudioStreamPlayer2.play()
 			jumps += 1
 	elif is_on_floor():
 		jumps = 0
 
 	if not is_on_floor():
+		$AudioStreamPlayer.play()
 		$AnimatedSprite.play("Jump")
