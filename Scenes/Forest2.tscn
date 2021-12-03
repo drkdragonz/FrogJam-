@@ -7,10 +7,11 @@
 [ext_resource path="res://Graphics/Environmen.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Forest2 - Anim.gd" type="Script" id=7]
-[ext_resource path="res://UI/nokiafc22.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Graphics/lmfaocin.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/FallingPlatform.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/267526__klankbeeld__march-spring-morning-02-nl-150309-0525.wav" type="AudioStream" id=11]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=62]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )

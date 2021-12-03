@@ -11,7 +11,8 @@
 [ext_resource path="res://Graphics/Sun.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Small Light.png" type="Texture" id=10]
 [ext_resource path="res://Audio/Florian_Stracker_-_06_Battle_to_the_Blood.mp3" type="AudioStream" id=11]
-[ext_resource path="res://UI/nokiafc22.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=12]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=62]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
