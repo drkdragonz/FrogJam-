@@ -51,7 +51,7 @@ func _physics_process(delta):
 			if my_move_direction:
 				change_state(WALK)
 			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
-				#print("jumpin")
+				$AudioStreamPlayer2.play()
 				_velocity.y = -jump_force
 				can_jump -= 1
 				change_state(AIR)
@@ -60,7 +60,7 @@ func _physics_process(delta):
 			if not my_move_direction:
 				change_state(IDLE)
 			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
-				#print("jumpin")
+				$AudioStreamPlayer2.play()
 				_velocity.y = -jump_force
 				can_jump -= 1
 				change_state(AIR)
