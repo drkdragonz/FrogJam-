@@ -733,7 +733,7 @@ margin_right = 179.0
 margin_bottom = 124.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 33 )
-text = "Apparently if i just go up then i will be able to see the fabled \"Sky\"."
+text = "Apparently, if I just go up then I will be able to see the fabled 'Sky'"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -747,7 +747,7 @@ margin_right = 181.0
 margin_bottom = 126.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 33 )
-text = "I mean... its getting boring down here. I might aswell do something."
+text = "I mean... It's getting boring down here. I might aswell do something."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -761,7 +761,7 @@ margin_right = 183.0
 margin_bottom = 146.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 33 )
-text = "Like doing a sequence of extremely hard and totaly fair jumps."
+text = "Like doing a sequence of extremely hard and totally fair jumps!!!"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -774,7 +774,7 @@ margin_right = 173.0
 margin_bottom = 115.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 35 )
-text = "Convenient "
+text = "Oh hey a hole! How convenient "
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

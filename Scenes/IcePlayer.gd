@@ -35,11 +35,11 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if jumps < max_jumps and Input.is_action_just_pressed("ui_up"):
+			$AudioStreamPlayer3.play()
 			$AnimatedSprite.play("Jump")
 			velocity.y = jump_speed
 			jumps += 1
 	elif is_on_floor():
-		$AudioStreamPlayer3.play()
 		jumps = 0
 
 	if not is_on_floor():
