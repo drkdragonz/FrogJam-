@@ -6,7 +6,7 @@ export var _gravity = 0.0
 export var can_jump_start = 0
 
 var can_jump = 0
-
+var counter = 0
 var _velocity = Vector2()
 var _floor = Vector2(0, -1)
 
@@ -32,6 +32,10 @@ func _ready():
 	print(can_jump)
 
 func _physics_process(delta):
+	counter += delta
+	while counter >= 8:
+		counter -= 8
+		$AudioStreamPlayer.play()
 	if is_on_floor() and _state == IDLE:
 		$AnimatedSprite.play("Idle")
 	flip_sprite()

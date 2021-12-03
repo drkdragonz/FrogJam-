@@ -6,9 +6,10 @@ export (int) var jump_speed = -380
 export (int) var gravity = 1600
 
 var jumps = 0
+var counter = 0
 const max_jumps = 2
-
 var velocity = Vector2.ZERO
+
 
 export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
@@ -36,7 +37,6 @@ func _physics_process(delta):
 	if jumps < max_jumps and Input.is_action_just_pressed("ui_up"):
 			$AnimatedSprite.play("Jump")
 			velocity.y = jump_speed
-			$AudioStreamPlayer2.play()
 			jumps += 1
 	elif is_on_floor():
 		jumps = 0
@@ -44,3 +44,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		$AudioStreamPlayer.play()
 		$AnimatedSprite.play("Jump")
+	
+	counter += delta
+	while counter >= 8:
+		counter -= 8
+		$AudioStreamPlayer2.play()
