@@ -449,18 +449,18 @@ tile_data = PoolIntArray( -2752473, 0, 1, -2752470, 0, 1, -2359270, 0, 1, -23592
 [node name="Area2D" type="Area2D" parent="Enviroment"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Area2D"]
-position = Vector2( 160, -7 )
+position = Vector2( 160, -1 )
 shape = SubResource( 29 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enviroment/Area2D"]
-position = Vector2( 160, -171 )
+position = Vector2( 160, -170 )
 shape = SubResource( 29 )
 
 [node name="Area2D2" type="Area2D" parent="Enviroment"]
 position = Vector2( 0, -184 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Area2D2"]
-position = Vector2( 160, 0 )
+position = Vector2( 160, 3 )
 shape = SubResource( 29 )
 
 [node name="Area2d" type="Area2D" parent="Enviroment"]
@@ -476,7 +476,7 @@ position = Vector2( 160, -90 )
 position = Vector2( 160, -270 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Area2d"]
-position = Vector2( 160, 9 )
+position = Vector2( 160, 10 )
 shape = SubResource( 28 )
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -10,7 +10,6 @@
 [ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Scenes/Free sound effect _ wind sound .mp3" type="AudioStream" id=9]
 
-
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"
 0/texture = ExtResource( 3 )
