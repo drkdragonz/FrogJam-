@@ -467,7 +467,7 @@ anims/Spin = SubResource( 46 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -30.0
+volume_db = -15.0
 autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
