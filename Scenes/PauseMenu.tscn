@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Cave/Rock tilemap.png" type="Texture" id=2]
-[ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/nokiafc22.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Rock tilemap.png 0"

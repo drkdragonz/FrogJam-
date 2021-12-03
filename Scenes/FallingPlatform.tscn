@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/FallingPlatform.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Eoo.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=89]
+resource_name = "Break"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.7, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 228.08, -192.12 ), Vector2( 226, -191 ), Vector2( 225, -192 ), Vector2( 229, -192 ), Vector2( 225, -191 ), Vector2( 225, -67 ), Vector2( 228.08, -192.12 ) ]
+}
+
+[sub_resource type="Animation" id=90]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 231, -190 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=88]
+extents = Vector2( 272.819, 178.325 )
+
+[sub_resource type="RectangleShape2D" id=91]
+extents = Vector2( 260, 120 )
+
+[node name="FallingPlatform" type="StaticBody2D"]
+position = Vector2( 231, -190 )
+scale = Vector2( 0.0439852, 0.0448619 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Eoo")
+anims/Break = SubResource( 89 )
+anims/RESET = SubResource( 90 )
+
+[node name="Eoo" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.81885, 2.6748 )
+shape = SubResource( 88 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.81885, -105.116 )
+shape = SubResource( 91 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

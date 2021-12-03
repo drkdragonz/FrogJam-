@@ -1,11 +1,11 @@
 [gd_scene load_steps=51 format=2]
 
-[ext_resource path="res://Scenes/Florian_Stracker_-_05_Don't_Trust_the_Merchants.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Audio/Florian_Stracker_-_05_Don't_Trust_the_Merchants.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Graphics/Cave/Rock tilemap.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Cave/Rock background.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
 [ext_resource path="res://Graphics/Cave/Environment.png" type="Texture" id=5]
-[ext_resource path="res://nokiafc22.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/nokiafc22.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"
@@ -447,10 +447,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 75.0
-margin_top = 25.0
-margin_right = 245.0
-margin_bottom = 58.0
+margin_left = 71.0
+margin_top = 27.0
+margin_right = 248.0
+margin_bottom = 60.0
 rect_rotation = -5.5
 rect_pivot_offset = Vector2( 88.5, 17 )
 custom_colors/font_color = Color( 0.933333, 0.85098, 1, 1 )

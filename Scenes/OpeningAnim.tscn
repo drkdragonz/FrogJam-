@@ -5,9 +5,9 @@
 [ext_resource path="res://Graphics/Cave/Rock background.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/OpeningAnim.gd" type="Script" id=4]
 [ext_resource path="res://Graphics/Cave/Environment.png" type="Texture" id=5]
-[ext_resource path="res://wooduaauauauauaua.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/wooduaauauauauaua.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/SpeechBubble.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Florian_Stracker_-_06_Battle_to_the_Blood.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Audio/Florian_Stracker_-_06_Battle_to_the_Blood.mp3" type="AudioStream" id=8]
 
 [sub_resource type="TileSet" id=27]
 0/name = "Rock background.png 0"

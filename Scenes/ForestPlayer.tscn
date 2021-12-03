@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Graphics/frog.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://CARDUP6.WAV" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/CARDUP6.WAV" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )

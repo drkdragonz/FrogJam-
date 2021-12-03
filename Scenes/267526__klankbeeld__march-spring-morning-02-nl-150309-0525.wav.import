@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/267526__klankbeeld__march-spring-morning-02-nl-150309-0525.wav-dd6b9fc5cb5e8e7a2cd5af0eccd8dab5.sample"
+
+[deps]
+
+source_file="res://Scenes/267526__klankbeeld__march-spring-morning-02-nl-150309-0525.wav"
+dest_files=[ "res://.import/267526__klankbeeld__march-spring-morning-02-nl-150309-0525.wav-dd6b9fc5cb5e8e7a2cd5af0eccd8dab5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
