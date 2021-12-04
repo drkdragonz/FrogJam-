@@ -16,11 +16,11 @@ export (float, 0, 1.0) var acceleration = 0.25
 
 func get_input():
 	var dir = 0
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("right"): 
 		dir += 1
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("Walk")
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("left"):
 		dir -= 1
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("Walk")
@@ -34,7 +34,7 @@ func _physics_process(delta):
 	get_input()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
-	if jumps < max_jumps and Input.is_action_just_pressed("ui_up"):
+	if jumps < max_jumps and Input.is_action_just_pressed("ui_up") or jumps < max_jumps and Input.is_action_just_pressed("up"):
 			$AudioStreamPlayer3.play()
 			$AnimatedSprite.play("Jump")
 			velocity.y = jump_speed
