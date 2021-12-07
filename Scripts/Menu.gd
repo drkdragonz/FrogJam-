@@ -1,9 +1,7 @@
 extends Control
 
 func _ready():
-	pass 
-
-
+	TimeDisplayer.TimerOn = false
 
 
 func _on_Start_pressed():

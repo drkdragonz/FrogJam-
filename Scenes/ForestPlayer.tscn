@@ -5,38 +5,6 @@
 [ext_resource path="res://Scenes/CARDUP6.WAV" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/jump.wav" type="AudioStream" id=4]
 
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 1 )
-region = Rect2( 333, 0, 111, 102 )
-
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 111, 102 )
@@ -81,13 +49,40 @@ region = Rect2( 777, 0, 111, 102 )
 atlas = ExtResource( 1 )
 region = Rect2( 888, 0, 111, 102 )
 
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 333, 0, 111, 102 )
+
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 12 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 1.0
-}, {
 "frames": [ SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "Idle",
@@ -97,12 +92,17 @@ animations = [ {
 "loop": true,
 "name": "Walk",
 "speed": 16.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 7.5, 5.5 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player2" type="KinematicBody2D"]
 script = ExtResource( 2 )
 jump_force = 300.0
 _speed = 200.0

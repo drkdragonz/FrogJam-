@@ -50,7 +50,7 @@ func _physics_process(delta):
 			_velocity.x = 0
 			if my_move_direction:
 				change_state(WALK)
-			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
+			elif Input.is_action_just_pressed("Jump") and can_jump > 0:
 				$AudioStreamPlayer2.play()
 				_velocity.y = -jump_force
 				can_jump -= 1
@@ -59,7 +59,7 @@ func _physics_process(delta):
 			$AnimatedSprite.play("Walk")
 			if not my_move_direction:
 				change_state(IDLE)
-			elif Input.is_action_just_pressed("ui_up") and can_jump > 0:
+			elif Input.is_action_just_pressed("Jump") and can_jump > 0:
 				$AudioStreamPlayer2.play()
 				_velocity.y = -jump_force
 				can_jump -= 1
@@ -81,7 +81,7 @@ func _physics_process(delta):
 
 func move_direction() -> Vector2:
 	return Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"), 0
+		Input.get_action_strength("Left") - Input.get_action_strength("Right"), 0
 	)
 
 func change_state(target_state: int):
